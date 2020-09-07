@@ -31,10 +31,10 @@ ActiveRecord::Schema.define(version: 2020_09_07_144152) do
 
   create_table "cities", force: :cascade do |t|
     t.string "name"
-    t.bigint "country_id"
+    t.bigint "state_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["country_id"], name: "index_cities_on_country_id"
+    t.index ["state_id"], name: "index_cities_on_state_id"
   end
 
   create_table "countries", force: :cascade do |t|
@@ -96,6 +96,9 @@ ActiveRecord::Schema.define(version: 2020_09_07_144152) do
 
   create_table "states", force: :cascade do |t|
     t.string "name"
+    t.string "abbreviation"
+    t.string "capital"
+    t.string "region"
     t.bigint "country_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
