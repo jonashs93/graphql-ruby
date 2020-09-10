@@ -7,6 +7,11 @@ module Types
       argument :id, ID, required: false
     end
 
+    field :states, [StateType], null: false
+    field :state, StateType, null: true do
+      argument :id, ID, required: true
+    end
+
     # query implementations
 
     def addresses
@@ -15,6 +20,14 @@ module Types
 
     def address(id: 2)
       Address.find(id)
+    end
+
+    def states
+      State.all
+    end
+
+    def state(id:)
+      State.find(id)
     end
   end
 end

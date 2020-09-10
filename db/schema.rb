@@ -56,13 +56,6 @@ ActiveRecord::Schema.define(version: 2020_09_07_144152) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "orders", force: :cascade do |t|
-    t.string "description"
-    t.float "total"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "owners", force: :cascade do |t|
     t.string "name"
     t.string "cpf"
@@ -73,13 +66,6 @@ ActiveRecord::Schema.define(version: 2020_09_07_144152) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["address_id"], name: "index_owners_on_address_id"
     t.index ["gender_id"], name: "index_owners_on_gender_id"
-  end
-
-  create_table "payments", force: :cascade do |t|
-    t.integer "order_id"
-    t.float "amount"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "products", force: :cascade do |t|

@@ -6,14 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-order1 = Order.create(description: "King of the Hill DVD", total: 100.00)
-order2 = Order.create(description: "Mega Man 3 OST", total: 29.99)
-order3 = Order.create(description: "Punch Out!! NES", total: 0.75)
-
-payment1 = Payment.create(order_id: order1.id, amount: 20.00)
-payment2 = Payment.create(order_id: order2.id, amount: 1.00)
-payment3 = Payment.create(order_id: order3.id, amount: 0.25)
-
 Country.create!([
   { name: 'Rússia', capital: 'Moscou', territorial_extension: 17_075_400, population: 140_300_000, language: 'Russo', location: 'Leste da Europa', coin: 'Rublo russo'},
   { name: 'Canadá', capital: 'Ottawa', territorial_extension: 9_976_139, population: 33_800_000, language: 'Inglês', location: 'Norte da América', coin: 'Dólar canadense'},
